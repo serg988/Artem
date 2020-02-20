@@ -7,6 +7,7 @@ use app\widgets\Alert;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
+use yii\widgets\ActiveForm;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
@@ -29,10 +30,16 @@ AppAsset::register($this);
     <header>
         <div class="container">
             <div class="header">
-                <a href="index.html">На главную</a>
+                <a href="/">На главную</a>
                 <a href="#">Вход в админку</a>
-                <a href="#">Корзина</a>
+                <a href="#" class="cart" >Корзина</a>
+<!--                --><?php //$model = new \app\models\Good()?>
+<!--                --><?php //$form = ActiveForm::begin(['id' => 'search', 'action' => 'category/search', 'method' => 'get'])?>
+<!--                --><?//=$form->field($model, 'search')?>
+                <form action="<?= yii\helpers\Url::to(['category/search']) ?>">
                 <input type="text" style="padding: 5px" placeholder="Поиск..." name="search">
+                </form>
+<!--                --><?php //ActiveForm::end()?>
             </div>
         </div>
     </header>
@@ -48,6 +55,14 @@ AppAsset::register($this);
     </div>
 </footer>
 </section>
+
+<div id="cart" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            Hello WORLD
+        </div>
+    </div>
+</div>
 
 
 <?php $this->endBody() ?>
