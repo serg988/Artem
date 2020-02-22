@@ -5,6 +5,7 @@ $db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
+    'language' => 'ru',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'defaultRoute' => 'category/index',
@@ -33,7 +34,16 @@ $config = [
             // send all mails to a file by default. You have to set
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
-            'useFileTransport' => true,
+            'useFileTransport' => false,
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.mail.ru',
+                'username' => 'serg98888@inbox.ru',
+                'password' => 'TrinityHouse',
+                'port' => '587',
+                'encryption' => 'tls',
+                //             'streamOptions' => [ 'ssl' => [ 'allow_self_signed' => true, 'verify_peer' => false, 'verify_peer_name' => false, ], ]
+            ],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

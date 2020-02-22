@@ -64,10 +64,17 @@ AppAsset::register($this);
 <div id="cart" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content" style="padding: 20px">
-            Hello WORLD
         </div>
     </div>
 </div>
+
+<div id="order" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content" style="padding: 20px">
+        </div>
+    </div>
+</div>
+
 <?php
 //Modal::begin([
 //    'header' => '<h2>Ваша корзина</h2>',

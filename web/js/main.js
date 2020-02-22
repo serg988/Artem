@@ -1,7 +1,26 @@
 // $('.cart').on('click', function (){
 //     $('#cart').modal('show');
 // });
+
+$('#cart .modal-content').on('click', '.btn-next', function () {
+        $.ajax({
+        url: '/cart/order',
+        type: 'get',
+        success: function (res) {
+            $('#order .modal-content').html(res);
+            $('#cart').modal('hide');
+            $('#order').modal('show');
+
+            UpdateCartQty()
+        },
+        error: function () {
+            alert('error');
+        }
+    })
+})
+
 function UpdateCartQty() {
+    // $('#cart-qty').html($('.total-quantity'));
     $.ajax({
         url: '/cart/cart-qty',
         type: 'get',
@@ -12,7 +31,6 @@ function UpdateCartQty() {
             alert('error');
         }
     })
-
 }
 function showCart(cart){
     $('#cart .modal-content').html(cart);
