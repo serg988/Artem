@@ -17,7 +17,7 @@ use yii\helpers\Url;
                 <div class="product-descr"><?=$good['descr']?></div>
                 <div class="product-price">Цена: <?=$good['price']?> рублей</div>
                 <div class="product-buttons">
-                    <a href="<?=Url::to(['good/index', 'name' => $good['link_name']])?>" type="button" class="product-button__add btn btn-success">Заказать</a>
+                    <a href="#" data-name="<?=$good['link_name']?>" type="button" class="product-button__add btn btn-success">Заказать</a>
                 </div>
             </div>
         </div>
